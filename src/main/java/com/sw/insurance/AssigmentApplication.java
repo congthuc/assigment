@@ -8,7 +8,7 @@ public class AssigmentApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AssigmentApplication.class, args);
-        System.out.println("Hello world!");
+        System.out.println("Hello Sweden Insurance!");
 	}
 
 }
