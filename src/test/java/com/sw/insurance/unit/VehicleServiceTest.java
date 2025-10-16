@@ -4,6 +4,7 @@ import com.sw.insurance.dto.VehicleResponse;
 import com.sw.insurance.entity.Vehicle;
 import com.sw.insurance.exception.ResourceNotFoundException;
 import com.sw.insurance.repository.VehicleRepository;
+import com.sw.insurance.service.FeatureFlagService;
 import com.sw.insurance.service.VehicleService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -21,13 +22,21 @@ class VehicleServiceTest {
 
     @Mock
     private VehicleRepository vehicleRepository;
+    
+    @Mock
+    private FeatureFlagService featureFlagService;
 
     @InjectMocks
     private VehicleService vehicleService;
 
+    private static final String FEATURE_FLAG_KEY = "sw-insurance-pet-available";
+
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
+        // Default behavior for feature flag
+        when(featureFlagService.isFeatureEnabled(eq(FEATURE_FLAG_KEY), anyBoolean()))
+            .thenReturn(false);
     }
 
     @Test
