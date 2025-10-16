@@ -1,4 +1,4 @@
-package com.insurance.pct;
+package com.sw.insurance;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
