@@ -106,6 +106,42 @@ docker run -p 8080:8080 \
 ./gradlew build -x test
 ```
 
+## Feature Flags with LaunchDarkly
+
+This application uses LaunchDarkly for feature flag management, allowing for feature toggles without code deployments.
+
+### Current Feature Flags
+
+#### Car Insurance Feature
+- **Flag Key**: `sw-insurance-car-available`
+- **Purpose**: Controls access to the car insurance feature
+- **Default State**: `false` (disabled by default in local development)
+- **Behavior**:
+  - When `true`: Allows access to car insurance features
+  - When `false`: Returns 403 Forbidden with message "Car insurance feature is not supported!"
+
+### Configuration
+
+#### Local Development
+Feature flags are managed through a local JSON file for development:
+```json
+{
+  "flags": {
+    "sw-insurance-car-available": {
+      "key": "sw-insurance-car-available",
+      "version": 1,
+      "on": true,
+      "offVariation": 0,
+      "variations": [false, true]
+    }
+  }
+}
+```
+
+#### Environment Configuration
+- **Local**: Uses `launchdarkly/ld-flags-local.json`
+- **Production**: Connects to LaunchDarkly using environment variable `LAUNCHDARKLY_SDK_KEY`
+
 ## Gradle Tasks
 
 ### Docker Tasks
