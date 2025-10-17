@@ -29,14 +29,14 @@ class VehicleServiceTest {
     @InjectMocks
     private VehicleService vehicleService;
 
-    private static final String FEATURE_FLAG_KEY = "sw-insurance-pet-available";
+    private static final String SW_INSURANCE_CAR_AVAILABLE = "sw-insurance-car-available";
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
         // Default behavior for feature flag
-        when(featureFlagService.isFeatureEnabled(eq(FEATURE_FLAG_KEY), anyBoolean()))
-            .thenReturn(false);
+        when(featureFlagService.isFeatureEnabled(eq(SW_INSURANCE_CAR_AVAILABLE), anyBoolean()))
+            .thenReturn(true);
     }
 
     @Test

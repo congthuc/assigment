@@ -1,0 +1,15 @@
+{
+  "flags": {
+    "sw-insurance-car-available": {
+      "key": "sw-insurance-car-available",
+      "version": 1,
+      "on": true,
+      "offVariation": 0,
+      "variations": [false, true],
+      "fallthrough": {
+        "variation": 1
+      }
+    }
+  },
+  "segments": {}
+}
