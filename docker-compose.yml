@@ -17,6 +17,8 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+    networks:
+      - assigment_default
 
   app:
     build: .
@@ -27,9 +29,7 @@ services:
     environment:
       SPRING_PROFILES_ACTIVE: docker
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/ifsw-db
-#      SPRING_DATASOURCE_USERNAME: ifsw-user
-#      SPRING_DATASOURCE_PASSWORD: Ifsweden@2025
-#      SPRING_JPA_HIBERNATE_DDL-AUTO: update
+      launchDarkly.sdk-key: ${launchDarkly.sdk-key}
     ports:
       - "8080:8080"
     restart: unless-stopped
