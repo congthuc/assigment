@@ -154,5 +154,10 @@ Feature flags are managed through a local JSON file for development:
 - `blackboxTest` - Run only blackbox tests
 - `allTests` - Run all tests (unit + blackbox)
 
+## License
+
+PCT
+
+---
 
 *This assignment is supoprt by Cascade AI plugin for Intellij IDEA*
