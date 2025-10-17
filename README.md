@@ -117,3 +117,6 @@ docker run -p 8080:8080 \
 - `test` - Run unit tests (excludes blackbox tests)
 - `blackboxTest` - Run only blackbox tests
 - `allTests` - Run all tests (unit + blackbox)
+
+
+*This assignment is supoprt by Cascade AI plugin for Intellij IDEA*
