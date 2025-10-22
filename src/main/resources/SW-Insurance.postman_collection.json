@@ -1,0 +1,194 @@
+{
+	"info": {
+		"_postman_id": "23601fa6-c83c-4a33-9458-592c95c46162",
+		"name": "SW-Insurance",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2642627",
+		"_collection_link": "https://gold-shuttle-596131.postman.co/workspace/My-Workspace~a061ab9f-17a8-428e-81fa-e17566517f88/collection/2642627-23601fa6-c83c-4a33-9458-592c95c46162?action=share&source=collection_link&creator=2642627"
+	},
+	"item": [
+		{
+			"name": "vehicle info",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/vehicles/ABC123",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"vehicles",
+						"ABC123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "vehicle info not found",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/vehicles/ABC12355555",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"vehicles",
+						"ABC12355555"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Policies for Customer",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/v1/insurances/customer/ID12345678",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"insurances",
+						"customer",
+						"ID12345678"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer with no policy",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/v1/insurances/customer/ID56789012",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"insurances",
+						"customer",
+						"ID56789012"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer not found",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/v1/insurances/customer/11111111111111",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"insurances",
+						"customer",
+						"11111111111111"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
